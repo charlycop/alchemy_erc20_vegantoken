@@ -26,23 +26,23 @@ async function main() {
   console.log("VeganTokenContract @", goerli_veganTokentodrop);
   
   console.log("-= AVANT ALLOWANCE =-");
-  console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.connect(user).allowance(user.address, bucketaddressforapprove)));
+  console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.allowance(user.address, bucketaddressforapprove)));
   console.log("Signer balance VEG :", hre.ethers.formatEther(await VeganTokenContract.balanceOf(user.address)));
   
-  await VeganTokenContract.connect(user).approve(bucketaddressforapprove, parseEther("0.01"));
+  await VeganTokenContract.approve(bucketaddressforapprove, parseEther("0.01"));
   let blockNumber = await user.provider.getBlockNumber();
   while(blockNumber == await user.provider.getBlockNumber());
   
   console.log("-= APRES ALLOWANCE =- (avant DROP)");
-  console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.connect(user).allowance(user.address, bucketaddressforapprove)));
+  console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.allowance(user.address, bucketaddressforapprove)));
   console.log("Signer balance VEG :", hre.ethers.formatEther(await VeganTokenContract.balanceOf(user.address)));
   
-  await BucketContract.connect(user).drop(goerli_veganTokentodrop, parseEther("0.01"));
+  await BucketContract.drop(goerli_veganTokentodrop, parseEther("0.01"));
   blockNumber = await user.provider.getBlockNumber();
   while(blockNumber == await user.provider.getBlockNumber());
 
   console.log("-= APRES DROP =-");
-  console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.connect(user).allowance(user.address, bucketaddressforapprove)));  console.log("Signer balance VEG :", hre.ethers.formatEther(await VeganTokenContract.balanceOf(user.address)));
+  console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.allowance(user.address, bucketaddressforapprove)));  console.log("Signer balance VEG :", hre.ethers.formatEther(await VeganTokenContract.balanceOf(user.address)));
 }
 
 main()

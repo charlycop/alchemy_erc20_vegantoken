@@ -1,0 +1,14 @@
+Signer account: 0x85e2f270f71AE819c225AC1F0a05F482704c9783
+Signer Account balance GoerliETH: 0.541797337759602685
+Signer Account balance VEG: 99.87
+BucketContract @ 0x873289a1aD6Cf024B927bd13bd183B264d274c68
+VeganTokenContract @ 0x3dE01170b468353EB3c68971C6773CA816B128DF
+-= AVANT ALLOWANCE =-
+Allowance : 0.0
+Signer balance VEG : 99.87
+-= APRES ALLOWANCE =- (avant DROP)
+Allowance : 0.0
+Signer balance VEG : 99.87
+-= APRES DROP =-
+Allowance : 0.0
+Signer balance VEG : 99.86
