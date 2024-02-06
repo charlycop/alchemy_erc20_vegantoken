@@ -8,4 +8,9 @@ contract VeganToken is ERC20 {
     constructor() ERC20("VeganToken", "VEG") {
         _mint(msg.sender, _initial_supply);
     }
+
+    function approve(address spender, uint256 amount) public override returns (bool) {
+        _approve(_msgSender(), spender, amount);
+        return true;
+    }
 }
