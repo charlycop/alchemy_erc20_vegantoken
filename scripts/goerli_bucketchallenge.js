@@ -25,7 +25,7 @@ async function main() {
   console.log("BucketContract @", bucketaddressforapprove);
   console.log("VeganTokenContract @", goerli_veganTokentodrop);
   
-  console.log("-= AVANT ALLOWANCE =-");
+  console.log("-= AVANT APPROVE =-");
   console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.allowance(user.address, bucketaddressforapprove)));
   console.log("Signer balance VEG :", hre.ethers.formatEther(await VeganTokenContract.balanceOf(user.address)));
   
@@ -33,7 +33,7 @@ async function main() {
   let blockNumber = await user.provider.getBlockNumber();
   while(blockNumber == await user.provider.getBlockNumber());
   
-  console.log("-= APRES ALLOWANCE =- (avant DROP)");
+  console.log("-= APRES APPROVE =-");
   console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.allowance(user.address, bucketaddressforapprove)));
   console.log("Signer balance VEG :", hre.ethers.formatEther(await VeganTokenContract.balanceOf(user.address)));
   
@@ -43,6 +43,7 @@ async function main() {
 
   console.log("-= APRES DROP =-");
   console.log("Allowance :", hre.ethers.formatEther(await VeganTokenContract.allowance(user.address, bucketaddressforapprove)));  console.log("Signer balance VEG :", hre.ethers.formatEther(await VeganTokenContract.balanceOf(user.address)));
+
 }
 
 main()
